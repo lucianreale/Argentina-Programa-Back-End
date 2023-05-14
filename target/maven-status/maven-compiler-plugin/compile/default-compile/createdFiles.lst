@@ -8,5 +8,6 @@ com\portfolioBackEnd\portfolioBackEnd\service\IEducationService.class
 com\portfolioBackEnd\portfolioBackEnd\WebConfig.class
 com\portfolioBackEnd\portfolioBackEnd\model\Education.class
 com\portfolioBackEnd\portfolioBackEnd\service\IUserService.class
+com\portfolioBackEnd\portfolioBackEnd\security\WebSecurityConfig.class
 com\portfolioBackEnd\portfolioBackEnd\controller\UserController.class
 com\portfolioBackEnd\portfolioBackEnd\repository\EducationRepository.class
