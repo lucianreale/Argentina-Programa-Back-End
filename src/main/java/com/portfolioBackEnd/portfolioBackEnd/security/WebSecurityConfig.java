@@ -27,7 +27,8 @@ public class WebSecurityConfig {
     @Bean
     SecurityFilterChain filterChain (HttpSecurity http, AuthenticationManager authManager) throws Exception {
     return http
-            .csrf().disable()
+            .csrf()
+            .disable()
             .authorizeHttpRequests()
             .anyRequest()
             .authenticated()
@@ -43,15 +44,15 @@ public class WebSecurityConfig {
     @Bean
     UserDetailsService userDetailsService () {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withUsername("admin")
-                            .password(passwordEncoder().encode("admin"))
+        manager.createUser(User.withUsername("lucianreale@gmail.com")
+                            .password(passwordEncoder().encode("lucianreale"))
                             .roles()
                             .build());
         return manager;
     }
     
     @Bean
-    AuthenticationManager authManager(HttpSecurity http) throws Exception{
+    AuthenticationManager authManager (HttpSecurity http) throws Exception{
         return http.getSharedObject(AuthenticationManagerBuilder.class)
                 .userDetailsService(userDetailsService())
                 .passwordEncoder(passwordEncoder())

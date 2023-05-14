@@ -18,6 +18,5 @@ public interface IEducationService {
     
     public void deleteEducation (Long id);
     
-    public List<Education> getEducationByUser (Long id);
-    
+    public List<Education> getEducationByUserId (Long id);    
 }

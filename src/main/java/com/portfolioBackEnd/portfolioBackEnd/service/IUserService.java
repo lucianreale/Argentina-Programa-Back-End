@@ -19,4 +19,6 @@ public interface IUserService {
     public void deleteUser (Long id);
     
     public User getUserByid (Long id);
+    
+    public User getUserByMail (String mail);
 }

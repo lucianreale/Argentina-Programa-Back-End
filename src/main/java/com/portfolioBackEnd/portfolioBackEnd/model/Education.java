@@ -19,7 +19,7 @@ public class Education {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
-    private Long user_id;
+    private Long userid;
     private String school;
     private String title;
     private String img;
@@ -32,7 +32,7 @@ public class Education {
     };
     
     public Education (  Long id,
-                        Long user_id,
+                        Long userid,
                         String school,
                         String title,
                         String img,
@@ -42,7 +42,7 @@ public class Education {
                         Integer end){
            
             this.id = id;
-            this.user_id = user_id;
+            this.userid = userid;
             this.school = school;
             this.title = title;
             this.img = img;

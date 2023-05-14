@@ -8,6 +8,7 @@ import com.portfolioBackEnd.portfolioBackEnd.model.User;
 import com.portfolioBackEnd.portfolioBackEnd.repository.UserRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,7 +18,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService implements IUserService{
 
-    
     @Autowired
     public UserRepository usuRepo;
     
@@ -45,4 +45,9 @@ public class UserService implements IUserService{
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
+    @Override
+    public User getUserByMail(String mail) throws UsernameNotFoundException{
+        return usuRepo.findOneByMail(mail).orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

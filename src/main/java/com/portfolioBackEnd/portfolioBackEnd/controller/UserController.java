@@ -34,38 +34,17 @@ public class UserController {
     public String test(){
          return "Hola, el BackEnd se encuentra Online";
     }
-    
-    /*@GetMapping ("/hola/{nombre}/{edad}")
-    public String decirHola(@PathVariable String nombre,
-                            @PathVariable int edad){
-        return "Hola " + nombre + " Edad: " + edad;
-    }
-    
-    @GetMapping ("/holaRP")
-    public String decirHolaRP(@RequestParam String nombre,
-                              @RequestParam int edad){
-        return "HolaRP: " + nombre + " Edad: " + edad;
-    }
-    
-    @PostMapping ("/hola")
-    public String decirHolaPost(@RequestBody String nombre){
-        return "Hola " + nombre;
-    }
-    
-    @PostMapping ("/login/add")
-    public void agregarlogin(@RequestBody User log){
-        listaLogin.add(log);
-    }
-    
-    @GetMapping ("/login")
-    @ResponseBody
-    public List<User> verLogin() {
-        return listaLogin;
-    }*/
+
     @GetMapping ("/user/getbyid/{id}")
     @ResponseBody
     public User getUserByid(@PathVariable Long id){
         return usuSrv.getUserByid(id);
+    }
+    
+    @GetMapping ("/user/getbymail/{mail}")
+    @ResponseBody
+    public User getUserByMail(@PathVariable String mail){
+        return usuSrv.getUserByMail(mail);
     }
     
     @GetMapping ("/user")
