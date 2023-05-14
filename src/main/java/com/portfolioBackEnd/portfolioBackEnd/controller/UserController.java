@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.portfolioBackEnd.portfolioBackEnd.model.User;
 import com.portfolioBackEnd.portfolioBackEnd.service.IUserService;
+import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
@@ -33,6 +34,13 @@ public class UserController {
     @GetMapping ("/test")
     public String test(){
          return "Hola, el BackEnd se encuentra Online";
+    }
+    
+    @GetMapping ("/user/login")
+    public String login(){
+      JSONObject obj = new JSONObject();
+      obj.put("login", true); 
+      return obj.toJSONString();
     }
 
     @GetMapping ("/user/getbyid/{id}")
